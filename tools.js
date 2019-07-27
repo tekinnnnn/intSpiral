@@ -64,7 +64,6 @@ module.exports = {
                 case "0-1":
                     this._direction = {x: 1, y: 0};
                     break;
-
             }
         }
 
