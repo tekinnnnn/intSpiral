@@ -1,4 +1,4 @@
-const tools = require('./tools');
+const {intSpiral} = require('./tools');
 
-let object = new tools.intSpiral(10, 8);
+let object = new intSpiral(10, 8);
 object.finishHim();
