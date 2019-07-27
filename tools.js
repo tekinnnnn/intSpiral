@@ -36,12 +36,14 @@ module.exports = {
         };
 
         iterateCoordinates() {
+            let whatIsNext = this.whatIsNext();
+
             if (!(
-                this.whatIsNext().y >= 0 &&
-                this.whatIsNext().x >= 0 &&
-                this._layout.length > this.whatIsNext().y &&
-                this._layout[this.whatIsNext().y].length > this.whatIsNext().x &&
-                this._layout[this.whatIsNext().y][this.whatIsNext().x] === undefined
+                whatIsNext.y >= 0 &&
+                whatIsNext.x >= 0 &&
+                this._layout.length > whatIsNext.y &&
+                this._layout[whatIsNext.y].length > whatIsNext.x &&
+                this._layout[whatIsNext.y][whatIsNext.x] === undefined
             )) {
                 this.changeDirection();
             }
