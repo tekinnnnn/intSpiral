@@ -1,7 +1,2 @@
-{
-  "os": "linux",
-  "dist": "xenial",
-  "group": "stable",
-  ".result": "configured",
-  "language": "node_js"
-}
+os: linux
+language: node_js
