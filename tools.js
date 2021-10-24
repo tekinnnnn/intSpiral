@@ -5,8 +5,14 @@ module.exports = {
             this._height = height;
             this._square = this._width * this._height;
             this._layout = [];
-            this._coordinates = {x: 0, y: 0};
-            this._direction = {x: 1, y: 0};
+            this._coordinates = {
+                x: 0,
+                y: 0
+            };
+            this._direction = {
+                x: 1,
+                y: 0
+            };
 
             let initLayout = (x, y) => {
                 this._layout = new Array(y);
@@ -21,7 +27,7 @@ module.exports = {
                 this.putValueIntoCoordinate(number);
                 this.iterateCoordinates();
             }
-            console.log(this._layout);
+            console.table(this._layout);
         };
 
         putValueIntoCoordinate(value) {
@@ -39,12 +45,12 @@ module.exports = {
             let whatIsNext = this.whatIsNext();
 
             if (!(
-                whatIsNext.y >= 0 &&
-                whatIsNext.x >= 0 &&
-                this._layout.length > whatIsNext.y &&
-                this._layout[whatIsNext.y].length > whatIsNext.x &&
-                this._layout[whatIsNext.y][whatIsNext.x] === undefined
-            )) {
+                    whatIsNext.y >= 0 &&
+                    whatIsNext.x >= 0 &&
+                    this._layout.length > whatIsNext.y &&
+                    this._layout[whatIsNext.y].length > whatIsNext.x &&
+                    this._layout[whatIsNext.y][whatIsNext.x] === undefined
+                )) {
                 this.changeDirection();
             }
 
@@ -55,16 +61,28 @@ module.exports = {
         changeDirection() {
             switch (this._direction.x + "" + this._direction.y) {
                 case "10":
-                    this._direction = {x: 0, y: 1};
+                    this._direction = {
+                        x: 0,
+                        y: 1
+                    };
                     break;
                 case "01":
-                    this._direction = {x: -1, y: 0};
+                    this._direction = {
+                        x: -1,
+                        y: 0
+                    };
                     break;
                 case "-10":
-                    this._direction = {x: 0, y: -1};
+                    this._direction = {
+                        x: 0,
+                        y: -1
+                    };
                     break;
                 case "0-1":
-                    this._direction = {x: 1, y: 0};
+                    this._direction = {
+                        x: 1,
+                        y: 0
+                    };
                     break;
             }
         }
